@@ -1,0 +1,3 @@
+We have to create a Fibonacci Series Generator that will produce Fibonacci series upto a certain number of terms as directed by the user by taking input.
+
+We have to use a child thread in order to create the Series which will hence be printed by the parent thread only after the completion of chid thread.
