@@ -7,11 +7,20 @@
 void *fibonacci_generator(void *ptr_array){
 	int *arr;
 	arr=(int*)ptr_array;
+	int terms=*arr;
 
-	
+	*(arr+1)=0;
+
+	if(terms>1)
+	{	*(arr+2)=1;
+
+		for(int i=3;i<=terms;i++){
+			*(arr+i)=*(arr+i-1)+*(arr+i-2);
+		}
+	}
 
 	printf("\nThe values are : \n");
-	for(int i=1;i<=*arr;i++){
+	for(int i=1;i<=terms;i++){
 		printf("\n%d",*(arr+i));
 	}
 }
