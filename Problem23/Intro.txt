@@ -1,0 +1,25 @@
+Consider a scenario of demand paged memory. Page table is held in registers. It takes 8 milliseconds to service a page fault if an empty page is available or the replaced page is not modified and 20 milliseconds 
+if the replaced page is modified. Memory access time is 100 nanoseconds. Assume that the page to be replaced is modified 70 percent of the time. Generate a solution to find maximum acceptable page-fault rate 
+for access time that is not more than 200 nanoseconds.
+
+Sol:
+	Tnotmodified=  8ms
+	Tmodified 	=20ms
+	Maccess		=100ns
+
+	P(Page moddified)=70%=0.7
+	Therfore,Q=1-P=0.3
+
+	So, Average time in cae of a page fault,Tpf =p(Tmodified)+q(Tnotmodified)+Maccess
+												=0.7(20ms)+0.3(8ms)+100ns
+												=14ms+2.4ms+0.1ms
+												=16.5ms
+
+	let P be the requred probability of acceptable page faults.
+	Therefore,
+		200ns>=(1-P)100ns+P(16.5ms)
+		200ns>=100ns+P(-100ns+16.5ms)
+		100ns>=P(16400ns)
+		P<=100/16600
+		P<=0.00609756
+		  ~0.61%
