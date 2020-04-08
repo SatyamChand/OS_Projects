@@ -4,7 +4,7 @@
 #include<stdlib.h>
 
 
-void *fibonacci_generator(void *ptr_array)																//function defined by use of chil thread
+void *fibonacci_generator(void *ptr_array)																//function defined by use of child thread
 {	unsigned long *arr;
 	arr=(unsigned long*)ptr_array;																		//Typecasting back to int array pointer
 	unsigned long terms=*arr;																			//Using first element to determine the size of array
@@ -30,7 +30,7 @@ int main()
 	scanf("%d",&value);
 
 	if(value<0 || value>93){
-		printf("\nNo. of terms outside the range of an  int.\nPlease check if the no. of terms is not negetive and less than 94\n");
+		printf("\nTerms outside the range.\nPlease check if the no. of terms is not negetive and less than 94\n");
 	}
 	else{
 		if(value==0)
